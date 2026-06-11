@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thrive Community Fitness — Duvall, WA</title>
+  <meta name="description" content="Thrive Community Fitness Duvall — 24/7 access, group classes, Thrive Kids childcare, state-of-the-art equipment. Your fitness community since 2001." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --or:#f5811f; --or-d:rgba(245,129,31,.15); --or-b:rgba(245,129,31,.3);
+      --bl:#005395; --bl-d:rgba(0,83,149,.15); --bl-b:rgba(0,83,149,.3);
+      --bg:#09090e; --bgc:#111118; --bgs:#13131c;
+      --t:#fff; --t2:#9999b0; --t3:#55556a;
+      --bd:rgba(255,255,255,.07);
+      --go:linear-gradient(135deg,#f5811f,#d96c08);
+      --gb:linear-gradient(135deg,#005395,#003870);
+      --r:18px; --rs:12px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t);line-height:1.6;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;width:100%;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;transition:.35s}
+    nav.s{background:rgba(9,9,14,.95);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--bd);padding:.9rem 2.5rem}
+    .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;cursor:pointer}
+    .lb{width:40px;height:40px;border-radius:10px;background:var(--go);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.05rem;color:#fff}
+    .lt b{display:block;font-size:1rem;font-weight:800;letter-spacing:-.01em}
+    .lt small{font-size:.68rem;font-weight:600;color:var(--or);letter-spacing:.1em;text-transform:uppercase}
+    .nl{display:flex;align-items:center;gap:1.75rem;list-style:none}
+    .nl a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s;cursor:pointer}
+    .nl a:hover{color:#fff}
+    .np{background:var(--go);color:#fff!important;padding:.6rem 1.4rem;border-radius:50px;font-weight:700!important;box-shadow:0 3px 18px rgba(245,129,31,.35);transition:.2s!important}
+    .np:hover{opacity:.88;transform:translateY(-1px)}
+
+    /* HERO */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+      background:radial-gradient(ellipse 90% 70% at 50% -10%,rgba(0,83,149,.3) 0%,transparent 55%),
+                radial-gradient(ellipse 60% 50% at 85% 85%,rgba(245,129,31,.12) 0%,transparent 55%),var(--bg);overflow:hidden}
+    .hg{position:absolute;inset:0;pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:64px 64px;
+      -webkit-mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,#000 0%,transparent 100%);
+      mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,#000 0%,transparent 100%)}
+    .hc{position:relative;z-index:2;max-width:880px;padding:8rem 1.5rem 12rem}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--or-d);border:1px solid var(--or-b);color:var(--or);padding:.45rem 1.1rem;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:1.75rem}
+    .badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--or);animation:blink 2s infinite}
+    @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
+    .hero h1{font-size:clamp(2.6rem,7.5vw,5.75rem);font-weight:900;letter-spacing:-.04em;line-height:1.03;margin-bottom:1.4rem}
+    .hero h1 em{font-style:normal;background:var(--go);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{font-size:clamp(1rem,2vw,1.2rem);color:var(--t2);max-width:580px;margin:0 auto 2.25rem;line-height:1.75}
+    .br{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 2rem;border-radius:50px;font-size:.95rem;font-weight:700;text-decoration:none;transition:.2s;cursor:pointer;border:none}
+    .bo{background:var(--go);color:#fff;box-shadow:0 4px 28px rgba(245,129,31,.35)}
+    .bo:hover{transform:translateY(-2px);box-shadow:0 7px 36px rgba(245,129,31,.45)}
+    .bg{background:rgba(255,255,255,.055);color:#fff;border:1px solid rgba(255,255,255,.11)}
+    .bg:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);transform:translateY(-2px)}
+    .hs{position:absolute;bottom:3.5rem;left:50%;transform:translateX(-50%);display:flex;gap:3rem;z-index:2}
+    .sn{font-size:1.9rem;font-weight:900;letter-spacing:-.03em;background:var(--go);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .sl{font-size:.7rem;color:var(--t3);font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+
+    /* PERKS */
+    .perks{background:var(--bgs);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:1.5rem 2rem}
+    .pi2{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:1.25rem}
+    .pk{display:flex;align-items:center;gap:.6rem;font-size:.83rem;font-weight:500;color:var(--t2)}
+
+    /* SECTIONS */
+    section{padding:6.5rem 2rem}
+    .con{max-width:1200px;margin:0 auto}
+    .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:.875rem}
+    .st{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;letter-spacing:-.035em;line-height:1.08;margin-bottom:.875rem}
+    .ss{font-size:1.05rem;color:var(--t2);max-width:560px;line-height:1.7}
+    .card{background:var(--bgc);border:1px solid var(--bd);border-radius:var(--r);padding:2.25rem;transition:.3s}
+    .card:hover{border-color:var(--or-b);transform:translateY(-3px)}
+
+    /* MEMBERSHIP */
+    .mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;margin-top:3rem}
+    .mc{position:relative;overflow:hidden}
+    .mc.ft{border-color:rgba(245,129,31,.45);background:linear-gradient(135deg,rgba(245,129,31,.07) 0%,var(--bgc) 55%)}
+    .pt{position:absolute;top:1.1rem;right:1.1rem;background:var(--go);color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.1em;padding:.28rem .75rem;border-radius:50px}
+    .mi{font-size:2.25rem;margin-bottom:1.1rem}
+    .mt{font-size:1.35rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.02em}
+    .md{font-size:.875rem;color:var(--t2);line-height:1.6;margin-bottom:1.4rem}
+    .ml{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+    .ml li{display:flex;align-items:center;gap:.6rem;font-size:.855rem;color:var(--t2)}
+    .ml li::before{content:'✓';color:var(--or);font-weight:800;flex-shrink:0}
+    .mb{display:block;text-align:center;padding:.875rem;border-radius:var(--rs);font-size:.875rem;font-weight:700;text-decoration:none;transition:.2s;background:rgba(255,255,255,.05);color:#fff;border:1px solid var(--bd)}
+    .mc.ft .mb{background:var(--go);border:none;box-shadow:0 3px 18px rgba(245,129,31,.3)}
+    .mb:hover{background:rgba(255,255,255,.1)}
+    .mc.ft .mb:hover{opacity:.88;box-shadow:0 6px 26px rgba(245,129,31,.4)}
+
+    /* CLASSES */
+    .cls-sec{background:var(--bgs)}
+    .ch{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.75rem;flex-wrap:wrap;gap:1rem}
+    .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .cc{background:var(--bgc);border:1px solid var(--bd);border-radius:var(--r);padding:1.85rem;position:relative;overflow:hidden;transition:.3s;text-decoration:none;display:block;color:inherit}
+    .cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--go);transform:scaleX(0);transition:transform .3s}
+    .cc:hover{border-color:var(--or-b);transform:translateY(-3px)}
+    .cc:hover::after{transform:scaleX(1)}
+    .ce{font-size:1.85rem;margin-bottom:.875rem}
+    .cn{font-size:1.05rem;font-weight:700;margin-bottom:.4rem;color:var(--t)}
+    .cd{font-size:.82rem;color:var(--t3);line-height:1.55}
+    .sch-box{margin-top:2.5rem;background:var(--bgc);border:1px solid var(--bd);border-radius:var(--r);padding:2rem;text-align:center}
+    .sch-box p{color:var(--t2);font-size:.9rem;margin-bottom:1.25rem}
+
+    /* KIDS */
+    .kids-sec{background:var(--bg)}
+    .ki{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .kl{list-style:none;display:flex;flex-direction:column;gap:1.1rem;margin-top:2rem}
+    .kl li{display:flex;align-items:flex-start;gap:1rem}
+    .kic{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+    .kb strong{display:block;font-size:.92rem;font-weight:700;margin-bottom:.2rem}
+    .kb span{font-size:.82rem;color:var(--t3)}
+    .kv{background:linear-gradient(135deg,var(--bl-d),rgba(0,83,149,.04));border:1px solid var(--bl-b);border-radius:24px;padding:2.75rem;position:relative;overflow:hidden}
+    .kv::after{content:'🌳';position:absolute;right:-1.5rem;bottom:-1rem;font-size:9rem;opacity:.12;pointer-events:none}
+    .kv h3{font-size:1.2rem;font-weight:800;margin-bottom:.3rem}
+    .ks{font-size:.8rem;color:var(--t3);margin-bottom:1.6rem}
+    .hb2{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+    .hb{background:var(--bl-d);border:1px solid var(--bl-b);border-radius:var(--rs);padding:1rem}
+    .hl{font-size:.65rem;color:var(--or);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    .ht{font-size:.88rem;font-weight:700}
+    .kn{margin-top:1.5rem;padding:.875rem;border-radius:var(--rs);background:rgba(255,255,255,.03);border:1px solid var(--bd);font-size:.78rem;color:var(--t3);line-height:1.6}
+    .kids-btn{margin-top:1.75rem;display:block;text-align:center;padding:.875rem;border-radius:var(--rs);font-size:.875rem;font-weight:700;text-decoration:none;color:#fff;background:var(--gb);border:1px solid var(--bl-b);transition:.2s}
+    .kids-btn:hover{opacity:.88;transform:translateY(-1px)}
+
+    /* TRAINERS */
+    .tr-sec{background:var(--bgs)}
+    .tr-box{margin-top:3rem;background:linear-gradient(135deg,rgba(245,129,31,.06),var(--bgc));border:1px solid var(--or-b);border-radius:24px;padding:3rem;display:flex;align-items:center;gap:3rem;flex-wrap:wrap}
+    .tr-icon{font-size:4rem;flex-shrink:0}
+    .tr-info h3{font-size:1.3rem;font-weight:800;margin-bottom:.5rem}
+    .tr-info p{color:var(--t2);font-size:.95rem;line-height:1.7;margin-bottom:1.5rem;max-width:560px}
+    .tr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:3rem}
+    .tr-item{background:var(--bgc);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;text-align:center;transition:.3s}
+    .tr-item:hover{border-color:var(--or-b);transform:translateY(-3px)}
+    .tr-em{font-size:2rem;margin-bottom:.75rem}
+    .tr-name{font-size:.875rem;font-weight:700}
+    .tr-role{font-size:.75rem;color:var(--t3);margin-top:.25rem}
+
+    /* FACILITY */
+    .fac-sec{background:var(--bg)}
+    .fg{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+    .fi{background:var(--bgc);border:1px solid var(--bd);border-radius:var(--r);padding:1.65rem 1.25rem;text-align:center;transition:.3s}
+    .fi:hover{border-color:var(--or-b);transform:translateY(-3px)}
+    .fe{font-size:1.85rem;margin-bottom:.75rem}
+    .fn{font-size:.875rem;font-weight:700}
+    .fd{font-size:.74rem;color:var(--t3);margin-top:.25rem}
+    .fc{text-align:center;margin-top:2.25rem}
+
+    /* HOURS */
+    .hrs-sec{background:var(--bgs)}
+    .hg2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem}
+    .hc2{background:var(--bgc);border:1px solid var(--bd);border-radius:var(--r);padding:2.25rem}
+    .hti{display:flex;align-items:center;gap:.7rem;font-size:1rem;font-weight:700;margin-bottom:1.6rem}
+    .hr2{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--bd);font-size:.875rem}
+    .hr2:last-of-type{border-bottom:none}
+    .hd{color:var(--t2);font-weight:500}
+    .htm{font-weight:700}
+    .hp{font-size:.65rem;background:var(--or-d);color:var(--or);border:1px solid var(--or-b);padding:.2rem .6rem;border-radius:20px;font-weight:700}
+    .hn{margin-top:1.4rem;padding:.875rem;background:var(--or-d);border:1px solid var(--or-b);border-radius:var(--rs);font-size:.8rem;color:var(--t2);line-height:1.6}
+    .ld{display:flex;align-items:flex-start;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--bd)}
+    .ld:last-of-type{border-bottom:none}
+    .ldi{font-size:1.2rem;flex-shrink:0;margin-top:.1rem}
+    .ldb strong{display:block;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--t3);margin-bottom:.25rem}
+    .ldb p{font-size:.9rem;font-weight:500;line-height:1.5}
+    .ldb a{color:var(--t);text-decoration:none;transition:color .2s}
+    .ldb a:hover{color:var(--or)}
+
+    /* OWNER */
+    .own-sec{background:var(--bg)}
+    .oc{display:flex;align-items:center;gap:2.25rem;background:linear-gradient(135deg,var(--bl-d),var(--bgc));border:1px solid var(--bl-b);border-radius:24px;padding:2.75rem;margin-top:2.75rem}
+    .oa{width:76px;height:76px;flex-shrink:0;background:var(--gb);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+    .on{font-size:1.25rem;font-weight:800;margin-bottom:.2rem}
+    .or2{font-size:.78rem;color:var(--or);font-weight:700;letter-spacing:.05em;margin-bottom:.7rem}
+    .oq{font-size:.9rem;color:var(--t2);font-style:italic;line-height:1.65}
+    .nl2{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin:2.75rem 0 1rem}
+    .ng{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .ni{background:var(--bgc);border:1px solid var(--bd);border-radius:var(--rs);padding:1.1rem;text-align:center;font-size:.855rem;font-weight:500;color:var(--t2);transition:.2s;text-decoration:none;display:block}
+    .ni:hover{border-color:var(--bl-b);color:#fff}
+    .ni.here{border-color:var(--or);color:var(--or)}
+    .nh{display:block;font-size:.65rem;margin-top:.2rem;opacity:.8}
+
+    /* ACCESS */
+    .acc{background:var(--bgs);padding:2.5rem;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+    .ai{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+    .ac{display:flex;align-items:center;gap:.5rem;background:var(--bgc);border:1px solid var(--bd);border-radius:50px;padding:.6rem 1.15rem;font-size:.8rem;color:var(--t2)}
+
+    /* CTA */
+    .cta-sec{background:radial-gradient(ellipse 70% 90% at 50% 50%,rgba(245,129,31,.1) 0%,transparent 70%),var(--bg);text-align:center}
+    .ci{max-width:680px;margin:0 auto}
+    .ci h2{font-size:clamp(2.25rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;margin-bottom:1rem}
+    .ci p{font-size:1.05rem;color:var(--t2);margin-bottom:2.25rem;line-height:1.7}
+
+    /* FOOTER */
+    footer{background:#060609;border-top:1px solid var(--bd);padding:3.5rem 2rem 2rem}
+    .fg2{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid var(--bd)}
+    .fb p{color:var(--t3);font-size:.85rem;margin-top:.875rem;line-height:1.65;max-width:270px}
+    .fc2 h4{font-size:.7rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--t3);margin-bottom:1rem}
+    .fc2 ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+    .fc2 ul a{color:var(--t2);text-decoration:none;font-size:.855rem;transition:color .2s;cursor:pointer}
+    .fc2 ul a:hover{color:#fff}
+    .fb2{max-width:1200px;margin:0 auto;padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .fb2 p{color:var(--t3);font-size:.78rem}
+    .fb2 span{color:var(--or)}
+
+    /* FADE ANIMATIONS */
+    .fade{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+    .fade.in{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){.cg{grid-template-columns:1fr 1fr}.fg{grid-template-columns:repeat(2,1fr)}.fg2{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.nl{display:none}.ki{grid-template-columns:1fr;gap:2.75rem}.hg2{grid-template-columns:1fr}.tr-box{flex-direction:column;text-align:center}.oc{flex-direction:column;text-align:center}}
+    @media(max-width:600px){.cg{grid-template-columns:1fr}.fg{grid-template-columns:repeat(2,1fr)}.fg2{grid-template-columns:1fr;gap:2rem}.hs{gap:1.5rem}.sn{font-size:1.55rem}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <div class="lb">T</div>
+    <div class="lt"><b>THRIVE</b><small>Duvall</small></div>
+  </div>
+  <ul class="nl">
+    <li><a onclick="go('membership')">Membership</a></li>
+    <li><a onclick="go('classes')">Classes</a></li>
+    <li><a onclick="go('kids')">Thrive Kids</a></li>
+    <li><a onclick="go('trainers')">Trainers</a></li>
+    <li><a onclick="go('facility')">Facility</a></li>
+    <li><a onclick="go('hours')">Hours</a></li>
+    <li><a href="https://www.thrivecf.com/guest-passes.aspx" target="_blank" rel="noopener" class="np">Free Guest Pass</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hg"></div>
+  <div class="hc">
+    <div class="badge">Duvall's Gym Since 2001</div>
+    <h1>More Than a Gym.<br>It's Your <em>Community.</em></h1>
+    <p>State-of-the-art equipment, group fitness classes, Thrive Kids childcare, and 24/7 access — built for the people of Duvall, WA.</p>
+    <div class="br">
+      <a href="https://www.thrivecf.com/guest-passes.aspx" target="_blank" rel="noopener" class="btn bo">🎟️ Get Free Guest Pass</a>
+      <a href="https://join.thrivecf.com/location/duvall/" target="_blank" rel="noopener" class="btn bg">Join Now →</a>
+    </div>
+  </div>
+  <div class="hs">
+    <div><div class="sn">24/7</div><div class="sl">Access Available</div></div>
+    <div><div class="sn">2001</div><div class="sl">Est. in Duvall</div></div>
+    <div><div class="sn">6</div><div class="sl">WA Locations</div></div>
+  </div>
+</section>
+
+<!-- PERKS -->
+<div class="perks">
+  <div class="pi2">
+    <div class="pk"><span>🏋️</span> Precor Cardio & Free Weights</div>
+    <div class="pk"><span>🧒</span> Thrive Kids Childcare</div>
+    <div class="pk"><span>🔑</span> 24/7 Keycard Access</div>
+    <div class="pk"><span>🤸</span> Group Fitness Classes</div>
+    <div class="pk"><span>💪</span> Personal Trainers</div>
+    <div class="pk"><span>🎟️</span> Free Guest Pass</div>
+    <div class="pk"><span>♿</span> Fully Accessible</div>
+  </div>
+</div>
+
+<!-- MEMBERSHIP -->
+<section id="membership">
+  <div class="con">
+    <div class="fade">
+      <span class="tag">Memberships</span>
+      <h2 class="st">Simple, Affordable Access</h2>
+      <p class="ss">High value, low price — quality fitness for every budget and lifestyle in Duvall, WA.</p>
+    </div>
+    <div class="mg">
+      <div class="card mc fade d1">
+        <div class="mi">🏃</div>
+        <h3 class="mt">Standard Membership</h3>
+        <p class="md">Full access to all gym equipment and facilities during staffed hours.</p>
+        <ul class="ml">
+          <li>Full gym floor access</li>
+          <li>Precor cardio equipment</li>
+          <li>Free weights & barbells</li>
+          <li>Machine circuit training</li>
+          <li>Group fitness classes</li>
+          <li>Locker room & restrooms</li>
+        </ul>
+        <a href="https://join.thrivecf.com/location/duvall/" target="_blank" rel="noopener" class="mb">Join Now</a>
+      </div>
+      <div class="card mc ft fade d2">
+        <span class="pt">MOST POPULAR</span>
+        <div class="mi">🔑</div>
+        <h3 class="mt">24/7 Access Membership</h3>
+        <p class="md">Your schedule, your rules. Access the gym any hour — day or night.</p>
+        <ul class="ml">
+          <li>Everything in Standard</li>
+          <li>Keycard 24/7 entry</li>
+          <li>Non-staffed hour access</li>
+          <li>Early mornings & late nights</li>
+          <li>Flexible for any lifestyle</li>
+          <li>Secure keycard system</li>
+        </ul>
+        <a href="https://join.thrivecf.com/location/duvall/" target="_blank" rel="noopener" class="mb">Get 24/7 Access</a>
+      </div>
+      <div class="card mc fade d3">
+        <div class="mi">🎟️</div>
+        <h3 class="mt">Free Guest Pass</h3>
+        <p class="md">Try Thrive Duvall completely free — no pressure, no commitment needed.</p>
+        <ul class="ml">
+          <li>Full facility access</li>
+          <li>Try group fitness classes</li>
+          <li>Meet the community</li>
+          <li>No commitment required</li>
+          <li>Request online instantly</li>
+          <li>Walk in and feel the difference</li>
+        </ul>
+        <a href="https://www.thrivecf.com/guest-passes.aspx" target="_blank" rel="noopener" class="mb">Request Free Pass</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section class="cls-sec" id="classes">
+  <div class="con">
+    <div class="ch">
+      <div class="fade">
+        <span class="tag">Fitness Classes</span>
+        <h2 class="st">Classes for Every Level</h2>
+        <p class="ss">Instructor-led group classes designed to push you further — together.</p>
+      </div>
+      <a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener" class="btn bg fade">View Full Schedule →</a>
+    </div>
+    <div class="cg">
+      <a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener" class="cc fade d1"><div class="ce">💪</div><div class="cn">Strength Training</div><div class="cd">Build muscle and power with guided strength sessions for all levels.</div></a>
+      <a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener" class="cc fade d2"><div class="ce">🏃‍♀️</div><div class="cn">Cardio Blast</div><div class="cd">High-energy cardio sessions to torch calories and boost endurance.</div></a>
+      <a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener" class="cc fade d3"><div class="ce">🤸‍♂️</div><div class="cn">Group Fitness</div><div class="cd">Fun, motivating group workouts that make exercise social and effective.</div></a>
+      <a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener" class="cc fade d1"><div class="ce">🧘</div><div class="cn">Flexibility & Mobility</div><div class="cd">Stretch, recover, and move better with guided flexibility work.</div></a>
+      <a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener" class="cc fade d2"><div class="ce">🔥</div><div class="cn">HIIT Training</div><div class="cd">Intense interval training maximizing results in minimum time.</div></a>
+      <a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener" class="cc fade d3"><div class="ce">📅</div><div class="cn">Weekly Schedule</div><div class="cd">Location-specific calendars updated weekly — never miss your session.</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- THRIVE KIDS -->
+<section class="kids-sec" id="kids">
+  <div class="con">
+    <div class="ki">
+      <div class="fade">
+        <span class="tag">Thrive Kids</span>
+        <h2 class="st">You Workout.<br>They Thrive.</h2>
+        <p class="ss">Don't let childcare stop your fitness journey. Our dedicated Thrive Kids area keeps little ones happy while you train.</p>
+        <ul class="kl">
+          <li><span class="kic">👶</span><div class="kb"><strong>Supervised Childcare</strong><span>Consistent, trained staff keep your kids safe and engaged</span></div></li>
+          <li><span class="kic">🎪</span><div class="kb"><strong>Toys & Play Structures</strong><span>Interactive, activity-focused play — not screen-based</span></div></li>
+          <li><span class="kic">👨‍👩‍👧</span><div class="kb"><strong>Family-First Culture</strong><span>Thrive is built for the whole family — everyone belongs here</span></div></li>
+          <li><span class="kic">🌳</span><div class="kb"><strong>"The Tree House Gym"</strong><span>Kids love it so much, that's what they call us</span></div></li>
+        </ul>
+      </div>
+      <div class="kv fade d2">
+        <h3>Thrive Kids Hours</h3>
+        <div class="ks">Monday – Friday</div>
+        <div class="hb2">
+          <div class="hb"><div class="hl">Morning</div><div class="ht">9:00 AM – 12:00 PM</div></div>
+          <div class="hb"><div class="hl">Afternoon</div><div class="ht">4:00 PM – 6:30 PM</div></div>
+        </div>
+        <div class="kn">⚠️ Thrive Kids is not available during non-staffed hours or on Sundays. Please plan your visit during kids hours.</div>
+        <a href="https://www.thrivecf.com/duvall-kids.aspx" target="_blank" rel="noopener" class="kids-btn">Learn More About Thrive Kids →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINERS -->
+<section class="tr-sec" id="trainers">
+  <div class="con">
+    <div class="fade">
+      <span class="tag">Personal Training</span>
+      <h2 class="st">Expert Coaches In Your Corner</h2>
+      <p class="ss">Our certified personal trainers and fitness coaches are here to give you direction, accountability, and a proven plan to hit your goals.</p>
+    </div>
+    <div class="tr-box fade d1">
+      <div class="tr-icon">💪</div>
+      <div class="tr-info">
+        <h3>Meet the Thrive Duvall Training Team</h3>
+        <p>Whether you're brand new to fitness or a seasoned athlete looking to break through a plateau, our trainers build personalized programs around your goals, schedule, and fitness level.</p>
+        <a href="https://www.thrivecf.com/duvall-trainers.aspx" target="_blank" rel="noopener" class="btn bo" style="font-size:.875rem;padding:.8rem 1.75rem;">Meet Our Trainers →</a>
+      </div>
+    </div>
+    <div class="tr-grid">
+      <div class="tr-item fade d1"><div class="tr-em">🎯</div><div class="tr-name">Goal Setting</div><div class="tr-role">Personalized fitness plans</div></div>
+      <div class="tr-item fade d2"><div class="tr-em">📋</div><div class="tr-name">Custom Programs</div><div class="tr-role">Built around your lifestyle</div></div>
+      <div class="tr-item fade d3"><div class="tr-em">📈</div><div class="tr-name">Progress Tracking</div><div class="tr-role">Measurable results</div></div>
+      <div class="tr-item fade d4"><div class="tr-em">🤝</div><div class="tr-name">Accountability</div><div class="tr-role">We keep you on track</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section class="fac-sec" id="facility">
+  <div class="con">
+    <div class="fade">
+      <span class="tag">Our Facility</span>
+      <h2 class="st">Everything You Need to Crush It</h2>
+      <p class="ss">State-of-the-art Precor cardio, free weights, machine circuits, and more — all in one clean, welcoming space.</p>
+    </div>
+    <div class="fg">
+      <div class="fi fade d1"><div class="fe">🏃</div><div class="fn">Precor Cardio</div><div class="fd">Treadmills, ellipticals, bikes</div></div>
+      <div class="fi fade d2"><div class="fe">🏋️</div><div class="fn">Free Weights</div><div class="fd">Full range of dumbbells & barbells</div></div>
+      <div class="fi fade d3"><div class="fe">⚙️</div><div class="fn">Machine Circuits</div><div class="fd">Guided circuits for all levels</div></div>
+      <div class="fi fade d4"><div class="fe">🤸</div><div class="fn">Group Fitness Room</div><div class="fd">Dedicated class space</div></div>
+      <div class="fi fade d1"><div class="fe">🧒</div><div class="fn">Thrive Kids Area</div><div class="fd">Supervised children's play zone</div></div>
+      <div class="fi fade d2"><div class="fe">🚿</div><div class="fn">Locker Rooms</div><div class="fd">Clean, modern facilities</div></div>
+      <div class="fi fade d3"><div class="fe">♿</div><div class="fn">Fully Accessible</div><div class="fd">Wheelchair-friendly entry & parking</div></div>
+      <div class="fi fade d4"><div class="fe">🔓</div><div class="fn">Keycard Access</div><div class="fd">Secure 24/7 entry for members</div></div>
+    </div>
+    <div class="fc fade">
+      <a href="https://www.thrivecf.com/tour-thrive-duvall.aspx" target="_blank" rel="noopener" class="btn bg">📸 Take a Virtual Facility Tour →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section class="hrs-sec" id="hours">
+  <div class="con">
+    <div class="fade">
+      <span class="tag">Hours & Location</span>
+      <h2 class="st">Find Us in Duvall</h2>
+      <p class="ss">Right on Main Street — easy to find, easy to park, easy to love.</p>
+    </div>
+    <div class="hg2">
+      <div class="hc2 fade d1">
+        <div class="hti"><span>🕐</span> Staffed Hours</div>
+        <div class="hr2"><span class="hd">Monday – Friday</span><span class="htm">9:00 AM – 7:00 PM</span></div>
+        <div class="hr2"><span class="hd">Saturday</span><span class="htm">9:00 AM – 12:00 PM</span></div>
+        <div class="hr2"><span class="hd">Sunday</span><span class="htm" style="color:var(--t3)">Non-Staffed &nbsp;<span class="hp">24/7 Access</span></span></div>
+        <div class="hn">🔑 <strong>24/7 Access Members</strong> can enter any time — including evenings, weekends, and Sundays — with their keycard.</div>
+        <div style="margin-top:1.5rem">
+          <p style="font-size:.8rem;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem">Thrive Kids Hours (Mon–Fri)</p>
+          <div class="hb2">
+            <div class="hb"><div class="hl">Morning</div><div class="ht">9:00 AM – 12:00 PM</div></div>
+            <div class="hb"><div class="hl">Afternoon</div><div class="ht">4:00 PM – 6:30 PM</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="hc2 fade d2">
+        <div class="hti"><span>📍</span> Location Details</div>
+        <div class="ld"><span class="ldi">🏢</span><div class="ldb"><strong>Address</strong><p>15321 Main St NE, Suite #314<br>Duvall, WA 98019</p></div></div>
+        <div class="ld"><span class="ldi">📞</span><div class="ldb"><strong>Phone</strong><p><a href="tel:4253186127">(425) 318-6127</a></p></div></div>
+        <div class="ld"><span class="ldi">📧</span><div class="ldb"><strong>Email</strong><p><a href="mailto:Jen.Garat@thrivecf.com">Jen.Garat@thrivecf.com</a></p></div></div>
+        <div class="ld"><span class="ldi">🅿️</span><div class="ldb"><strong>Parking & Access</strong><p>Free parking · Wheelchair-accessible entrance, parking & restrooms</p></div></div>
+        <div style="margin-top:1.25rem;display:flex;gap:.75rem;flex-wrap:wrap">
+          <a href="https://www.google.com/maps/search/15321+Main+St+NE+Duvall+WA" target="_blank" rel="noopener" class="btn bo" style="font-size:.85rem;padding:.8rem 1.75rem;">📍 Get Directions</a>
+          <a href="tel:4253186127" class="btn bg" style="font-size:.85rem;padding:.8rem 1.75rem;">📞 Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OWNER / COMMUNITY -->
+<section class="own-sec" id="community">
+  <div class="con">
+    <div class="fade">
+      <span class="tag">Community</span>
+      <h2 class="st">Local. Personal. Passionate.</h2>
+      <p class="ss">Thrive Duvall is more than a gym — it's a movement to energize lives and transform the health of our entire community.</p>
+    </div>
+    <div class="oc fade d1">
+      <div class="oa">🏋️</div>
+      <div>
+        <div class="on">Shane Johnson</div>
+        <div class="or2">Franchise Owner — Thrive Duvall · Oak Harbor · Monroe</div>
+        <p class="oq">"My goal at Thrive Duvall is to energize your life and transform the health of our community!"</p>
+      </div>
+    </div>
+    <div class="nl2">The Thrive Network — Washington State</div>
+    <div class="ng fade">
+      <div class="ni here">📍 Duvall<span class="nh">You are here</span></div>
+      <a href="https://www.thrivecf.com/oak-harbor-home.aspx" target="_blank" rel="noopener" class="ni">Oak Harbor</a>
+      <a href="https://www.thrivecf.com/lacey-home.aspx" target="_blank" rel="noopener" class="ni">Lacey</a>
+      <a href="https://www.thrivecf.com/maple-valley-home.aspx" target="_blank" rel="noopener" class="ni">Maple Valley</a>
+      <a href="https://www.thrivecf.com/" target="_blank" rel="noopener" class="ni">Monroe</a>
+      <a href="https://www.thrivecf.com/anacortes-home.aspx" target="_blank" rel="noopener" class="ni">Anacortes</a>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSIBILITY -->
+<div class="acc">
+  <div class="ai">
+    <div class="ac">♿ Wheelchair Accessible Entrance</div>
+    <div class="ac">🅿️ Accessible Parking</div>
+    <div class="ac">🚻 Accessible Restrooms</div>
+    <div class="ac">🔑 24/7 Keycard Entry</div>
+    <div class="ac">🌐 Online Membership Portal</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sec" id="guestpass">
+  <div class="con">
+    <div class="ci fade">
+      <span class="tag">Ready to Start?</span>
+      <h2>Your First Visit Is On Us.</h2>
+      <p>Try Thrive Duvall completely free — no pressure, no commitment. Just walk through our doors and feel the difference a real community gym makes.</p>
+      <div class="br">
+        <a href="https://www.thrivecf.com/guest-passes.aspx" target="_blank" rel="noopener" class="btn bo">🎟️ Request Free Guest Pass</a>
+        <a href="https://join.thrivecf.com/location/duvall/" target="_blank" rel="noopener" class="btn bg">💳 Join Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg2">
+    <div class="fb">
+      <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <div class="lb">T</div>
+        <div class="lt"><b>THRIVE</b><small>Community Fitness</small></div>
+      </div>
+      <p>A high value, low cost gym proudly serving the Duvall community since 2001. More than a gym — your fitness family.</p>
+    </div>
+    <div class="fc2">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a onclick="go('membership')">Membership</a></li>
+        <li><a onclick="go('classes')">Classes</a></li>
+        <li><a onclick="go('kids')">Thrive Kids</a></li>
+        <li><a onclick="go('trainers')">Trainers</a></li>
+        <li><a onclick="go('facility')">Facility</a></li>
+        <li><a onclick="go('hours')">Hours & Location</a></li>
+      </ul>
+    </div>
+    <div class="fc2">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="https://www.thrivecf.com/guest-passes.aspx" target="_blank" rel="noopener">Free Guest Pass</a></li>
+        <li><a href="https://join.thrivecf.com/location/duvall/" target="_blank" rel="noopener">Join Now</a></li>
+        <li><a href="https://www.thrivecf.com/duvall-classes.aspx" target="_blank" rel="noopener">Class Schedule</a></li>
+        <li><a href="https://www.thrivecf.com/duvall-kids.aspx" target="_blank" rel="noopener">Thrive Kids</a></li>
+        <li><a href="https://www.thrivecf.com/duvall-trainers.aspx" target="_blank" rel="noopener">Trainers</a></li>
+        <li><a href="https://www.thrivecf.com/tour-thrive-duvall.aspx" target="_blank" rel="noopener">Facility Tour</a></li>
+      </ul>
+    </div>
+    <div class="fc2">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="tel:4253186127">(425) 318-6127</a></li>
+        <li><a href="mailto:Jen.Garat@thrivecf.com">Email Us</a></li>
+        <li><a href="https://www.facebook.com/thriveduvall/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/thriveduvall/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.google.com/maps/search/15321+Main+St+NE+Duvall+WA" target="_blank" rel="noopener">Get Directions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb2">
+    <p>© 2026 Thrive Community Fitness — Duvall. Franchise owned & operated by Shane Johnson.</p>
+    <p>Designed by <span>Your Name Here</span></p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('s', scrollY > 60));
+  const obs = new IntersectionObserver(
+    e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('in'); }),
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+  function go(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - nav.offsetHeight - 16, behavior:'smooth' });
+  }
+</script>
+</body>
+</html>
